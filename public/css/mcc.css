@@ -1,0 +1,238 @@
+body {
+	padding-top: 60px;
+	font-family:'RobotoDraft',sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+.mc-nav {
+	font-size: 24px;
+	line-height: 64px;
+	font-weight: 400;
+	margin-bottom:0px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+}
+
+.label-mcc {
+	font-size: 15px;
+	line-height: 24px;
+	color: #212121;
+	font-weight: 500;
+	text-rendering: optimizeLegibility;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 25px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 0px solid transparent;
+  border-radius: 1px;
+  moz-box-shadow: 1px 1px 2px 1px #b2b2b2;
+  webkit-box-shadow: 1px 1px 2px 1px #b2b2b2;
+  box-shadow: 1px 1px 2px 1px #b2b2b2;
+}
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: none;
+}
+.btn:hover,
+.btn:focus {
+  color: #333;
+  text-decoration: none;
+}
+.btn:active,
+.btn.active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.btn.disabled,
+.btn[disabled],
+fieldset[disabled] .btn {
+  pointer-events: none;
+  cursor: not-allowed;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  opacity: .65;
+}
+.btn-default {
+  color: #444;
+  background-color: #fafafa;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+  color: #333;
+  background-color: #ebebeb;
+}
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color: #ededed;
+  moz-box-shadow: none;
+  webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-default .badge {
+  color: #fff;
+  background-color: #333;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2196f3;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #1e88e5;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #606060;
+  moz-box-shadow: none;
+  webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn-primary .badge {
+  color: #fff;
+  background-color: #2196f3;
+}
+
+.hero {
+	background: url('../images/bg.jpg') no-repeat center center;
+	height:470px;
+	margin-top:-20px;
+
+}
+
+.intro {
+	text-align: center;
+	font-size:84px;
+	font-weight:bold;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+	padding-top:50px;
+}
+
+.logo {
+	font-size: 112px;
+	font-family: 'Roboto Light',sans-serif;
+	font-weight: 100;
+}
+
+.logo-legend {
+	font-size:44px;
+	font-family: 'Roboto',sans-serif;
+	font-weight: 200;
+}
+
+.createAccount {
+	max-width: 800px;
+}
+
+.form-mcc {
+  height: 30px;
+  margin-top:3px;
+  border-radius: 2px;
+}
+
+.help-form {
+	font-size: 13px;
+}
+
+.home-bg {
+	background-color: #333;
+	margin-top: 0px;
+	color: #fff;
+}
+
+.home-box {
+	background-color: #fff;
+	color: #333;
+	box-shadow: 3px 0px 9px 0px rgba(0, 0, 0, 0.32);
+	margin:20px;
+	padding:40px;
+}
+
+.forum-userbar {
+  vertical-align: top;
+  text-align: right;
+  padding-bottom: 10px;
+  box-shadow: 0 2px 4px -2px rgba(51,51,51,0.25);
+}
+
+.forum-optionbar {
+  height: 60px;
+  padding-top:12px;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd
+}
+
+.forum-headings {
+  height:41px;
+  color:#444;
+}
+
+@media (min-width: 768px){
+.navbar-nav{
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float:none;
+}
+}  

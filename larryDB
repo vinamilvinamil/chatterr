@@ -1,0 +1,30 @@
+User; hm Topic; hm Post; mo Image imageable
+    username string 50; unique
+    name string 50
+    email string 250
+    password string 64
+    role enum admin, moderator, user; default "user"
+    about string 500
+    location string 50
+    website string 50
+    timestamps
+
+Topic; ho Category; hm Post
+    timestamps
+    title string 250
+    content string 800
+    likes integer
+    views integer
+
+
+Category
+    name string 50; default "General"
+    timestamps
+
+Post    
+    timestamps
+    content text; default ""
+    likes integer; default "0"
+
+Image
+    filename string

@@ -11,7 +11,23 @@
 |
 */
 
+
+// Get Routes
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('home');
 });
+
+Route::get('signup', function()
+{
+	return View::make('signup');
+});
+
+Route::get('forum', 'ForumController@getForum');
+Route::get('newTopic', 'ForumController@getNewTopic');
+
+
+// Post Routes
+Route::post('signup', 'UserController@createUser');
+Route::post('login', 'UserController@loginUser');
+Route::post('newTopic', 'ForumController@createTopic');
