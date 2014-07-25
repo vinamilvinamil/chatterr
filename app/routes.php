@@ -23,9 +23,17 @@ Route::get('signup', function()
 	return View::make('signup');
 });
 
+Route::get('topic/{id}', function($id)
+{
+    $topic = Topic::find($id);
+    DB::table('topics')->increment('views');
+    return View::make('topic') -> with('topic', $topic);
+});
+
 Route::get('forum', 'ForumController@getForum');
 Route::get('newTopic', 'ForumController@getNewTopic');
 
+Route::get('logout', 'UserController@logoutUser');
 
 // Post Routes
 Route::post('signup', 'UserController@createUser');

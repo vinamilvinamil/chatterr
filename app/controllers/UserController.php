@@ -61,7 +61,13 @@ class UserController extends BaseController {
 		}    
 	}
 
-	public function getForum() 
+	public function logoutUser()
+	{
+		Auth::logout();
+		return Redirect::to('forum');
+	}
+
+public function getForum() 
 	{
 		if (Auth::check()) {
 			$username = Auth::user()->username;
@@ -70,4 +76,5 @@ class UserController extends BaseController {
 		else return Redirect::to('signup');
 	}
  
- }
+ }	
+

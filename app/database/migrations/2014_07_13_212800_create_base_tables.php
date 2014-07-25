@@ -21,6 +21,7 @@ class CreateBaseTables extends Migration {
             $table->string('about', 500)->nullable();
             $table->string('location', 50)->nullable();
             $table->string('website', 50)->nullable();
+            $table->string('remember_token', 100)->nullable();
             $table->timestamps();
         });
 
@@ -46,6 +47,8 @@ class CreateBaseTables extends Migration {
             $table->integer('views')->default(0)->unsigned();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
 

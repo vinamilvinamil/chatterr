@@ -11,11 +11,13 @@
     <title>Chatterr</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/mcc.css" rel="stylesheet">
+    <link href="{{ asset('css/mcc.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -36,11 +38,11 @@
             <span class="icon-bar"></span>
           </button>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse pull-right">
           <ul class="nav navbar-nav">
             <li class="active"><a href="{{ URL::to('/') }}">Home</a></li>
             <li><a href="{{ url('about') }}">About</a></li>
-            <li><a href="{{ url('signup') }}">Try it</a></li>
+            <li><a href="{{ url('forum') }}">Try it</a></li>
             <li><a href="{{ url('contact') }}">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -56,6 +58,6 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
   </body>
 </html>

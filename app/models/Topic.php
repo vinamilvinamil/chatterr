@@ -9,9 +9,9 @@ class Topic extends Eloquent
         return $this->belongsTo('User');
     }
 
-    public function categories()
+    public function category()
     {
-        return $this->hasOne('Category');
+        return $this->belongsTo('Category');
     }
 
     public function posts()

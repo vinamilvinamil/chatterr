@@ -27,7 +27,7 @@ class UserTableSeeder extends Seeder {
 		'username' => 'Coheed',
 		'name' => 'Mike Hanslo',
 		'email' => 'mikehanslo@gmail.com',
-		'password' => Hash::make('badger'),
+		'password' => Hash::make('badger005'),
 		'role' => 'admin',
 		'about' => 'Founder and creator',
 		'location' => 'Cape Town, South Africa',
@@ -56,12 +56,14 @@ class TopicTableSeeder extends Seeder {
 		Topic::create(array(
 			'title' => 'How to use Chatterr',
 			'content' => 'Welcome to Chatterr, we hope you enjoy your stay',
-			'user_id' => 1
+			'user_id' => 1,
+			'category_id' => 1
 			));
 		Topic::create(array(
 			'title' => 'Why Doge Is The Greatest Thing Ever',
 			'content' => 'We like dogs, but so do you. Go Doge!',
-			'user_id' => 1
+			'user_id' => 1,
+			'category_id' => 2
 			));
 	}
 }

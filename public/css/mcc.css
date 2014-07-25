@@ -5,11 +5,12 @@ body {
 }
 
 .mc-nav {
-	font-size: 24px;
-	line-height: 64px;
-	font-weight: 400;
+	font-size: 20px;
+	line-height: 70px;
+	font-weight: 300;
 	margin-bottom:0px;
-	box-shadow: 0 2px 5px rgba(0,0,0,.26);
+	box-shadow: 0 1px 1px rgba(0,0,0,.26);
+  transition: all 0.3s ease-out 0s;
 }
 
 .label-mcc {
@@ -22,8 +23,9 @@ body {
 
 .btn {
   display: inline-block;
-  padding: 5px 25px;
+  padding: 7px 14px;
   margin-bottom: 0;
+  margin-right:5px;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.42857143;
@@ -35,12 +37,10 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background-image: none;
   border: 0px solid transparent;
   border-radius: 1px;
-  moz-box-shadow: 1px 1px 2px 1px #b2b2b2;
-  webkit-box-shadow: 1px 1px 2px 1px #b2b2b2;
-  box-shadow: 1px 1px 2px 1px #b2b2b2;
+  transition: all 0.3s ease-out 0s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 .btn:focus,
 .btn:active:focus,
@@ -71,7 +71,7 @@ fieldset[disabled] .btn {
 }
 .btn-default {
   color: #444;
-  background-color: #fafafa;
+  background-color: #eaeaea;
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -153,6 +153,20 @@ fieldset[disabled] .btn-primary.active {
   background-color: #2196f3;
 }
 
+.dropdown-menu {
+  min-width: 130px;
+  font-weight: 300;
+  border-radius: 1px;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  line-height: 1.42857143;
+  white-space: nowrap;
+}
+
 .hero {
 	background: url('../images/bg.jpg') no-repeat center center;
 	height:470px;
@@ -227,7 +241,11 @@ fieldset[disabled] .btn-primary.active {
   height:41px;
   color:#444;
 }
-
+.top-post {
+  border-top: 1px;
+  border-width: 1px;
+  border-color: #ededed;
+}
 @media (min-width: 768px){
 .navbar-nav{
     margin: 0 auto;
