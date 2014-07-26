@@ -26,7 +26,7 @@ Route::get('signup', function()
 Route::get('topic/{id}', function($id)
 {
     $topic = Topic::find($id);
-    DB::table('topics')->increment('views');
+    $topic->increment('views');
     return View::make('topic') -> with('topic', $topic);
 });
 
