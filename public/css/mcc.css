@@ -1,5 +1,4 @@
 body {
-  padding-top: 60px;
   color:#333333;
   font-family:'RobotoDraft',sans-serif;
   font-smooth: always;
@@ -11,9 +10,15 @@ body {
   font-size: 20px;
   line-height: 70px;
   font-weight: 300;
-  margin-bottom:0px;
+  background-color: #fff;
+  border-color: #e7e7e7;
   box-shadow: 0 1px 1px rgba(0,0,0,.26);
-  transition: all 0.3s ease-out 0s;
+  transition: all 0.2s ease-out 0s;
+}
+
+.logo {
+  position: relative;
+  top: -0.5rem;
 }
 
 .label-mcc {
@@ -198,9 +203,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .logo {
-  font-size: 112px;
-  font-family: 'Roboto Light',sans-serif;
-  font-weight: 100;
+
 }
 
 .logo-legend {
