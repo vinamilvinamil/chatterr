@@ -27,7 +27,8 @@ Route::get('topic/{id}', function($id)
 {
     $topic = Topic::find($id);
     $topic->increment('views');
-    return View::make('topic') -> with('topic', $topic);
+    $posts = $topic -> posts;
+    return View::make('topic') -> with('topic', $topic) ->with('posts', $posts);
 });
 
 Route::get('forum', 'ForumController@getForum');
@@ -39,3 +40,7 @@ Route::get('logout', 'UserController@logoutUser');
 Route::post('signup', 'UserController@createUser');
 Route::post('login', 'UserController@loginUser');
 Route::post('newTopic', 'ForumController@createTopic');
+Route::post('newReply', 'TopicController@createReply');
+
+
+

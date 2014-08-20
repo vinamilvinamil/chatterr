@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('TopicTableSeeder');
 		$this->command->info('Topic table seeded!');
+
+		$this->call('PostTableSeeder');
+		$this->command->info('Post table seeded!');
 	}
 
 }
@@ -67,3 +70,22 @@ class TopicTableSeeder extends Seeder {
 			));
 	}
 }
+
+class PostTableSeeder extends Seeder { 
+
+	public function run()
+	{
+		DB::table('posts')->delete();
+		Post::create(array(
+			'content' => 'Why not click reply at the bottom to add to the discussion!',
+			'user_id' => 1,
+			'topic_id' => 1
+			));
+		Post::create(array(
+			'content' => 'Share and discuss, there is so much to talk about.',
+			'user_id' => 1,
+			'topic_id' => 1
+			));
+	}
+}
+

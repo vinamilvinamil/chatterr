@@ -1,15 +1,38 @@
 <?php
 
-class TopicController extends \BaseController {
+class TopicController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+	// Post Controllers
+
+	public function createReply()
 	{
-		//
+		if (Auth::check()) {
+
+			$data = Input::all();
+		
+			$rules = array(
+				'Content' => array('required', 'max:500'),
+		    );	
+
+			$validator = Validator::make($data, $rules);
+
+			if ($validator->fails()) {
+			    return Redirect::back() -> withErrors($validator);
+			}
+			else {
+				$replyContent = Input::get('Content');
+				$topic_id = Input::get('Topic_id');
+				$user_id = Auth::user() ->id;
+
+				$post = new Post;
+				$post -> content = $replyContent;
+				$post -> user_id = $user_id;
+				$post -> topic_id = $topic_id;
+				$post -> save();
+				return Redirect::back();
+			}
+		}
+		else return 'You must be logged in. Log in and try again.';
 	}
 
 
@@ -19,65 +42,6 @@ class TopicController extends \BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{
-		//
-	}
-
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
 	{
 		//
 	}

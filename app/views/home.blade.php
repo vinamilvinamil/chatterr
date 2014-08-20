@@ -3,15 +3,14 @@
 <div class="hero">
   <div class="container">
         <div class="intro">
-          <h1 class="logo">Chatterr</h1>
+          <h1 class="logo">Chatter</h1>
           <p class="logo-legend">A New Way To Start Discussions</p>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">TRY IT OUT</button>
+          <button type="button" class="btn-primary" data-toggle="modal" data-target="#loginModal">TRY IT OUT</button>
         </div>
   </div>
 </div><!-- /.container -->
 
     <!-- Login Modal -->
-    <!-- Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
