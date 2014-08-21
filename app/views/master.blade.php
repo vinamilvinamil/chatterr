@@ -38,7 +38,7 @@
 
   <body>
 
-  <nav class="navbar navbar-default mc-nav" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top mc-nav" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">

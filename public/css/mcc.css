@@ -4,6 +4,7 @@ body {
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
+  padding-top: 70px;
 }
 
 .mc-nav {
