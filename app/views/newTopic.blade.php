@@ -54,7 +54,7 @@
 	    						   has-error
 								   @endif">
 		        {{ Form::label('Content', 'Content', array('class' => 'control-label label-mcc')); }}
-		        	{{ Form::textarea('Content', null, array('class' => 'form-control form-mcc', 'row' => '6')); }}		       
+		        	{{ Form::textarea('Content', null, array('class' => 'form-control form-mcc mce', 'row' => '6')); }}		       
 		        	<span class="help-block help-form">Topic content.</span>
 		        <span class="text-danger control-label pull-left">{{ $errors->first('Content') }}</span>
 	        </div>		

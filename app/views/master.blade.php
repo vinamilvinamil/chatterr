@@ -14,6 +14,20 @@
     <link href='https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
 
+    <!-- TinyMCE Initiate -->
+    <script type="text/javascript" src="{{ asset('js/tinymce/tinymce.min.js') }}"></script>
+      <script type="text/javascript">
+      tinymce.init({
+          plugins: "link emoticons image",
+          selector: "textarea.mce",
+          width: '90%',
+          extended_valid_elements : "iframe[src|title|width|height|allowfullscreen|frameborder]",
+          menubar: false,
+          statusbar:  false,
+          toolbar: "undo redo | bold italic | link | emoticons | image"
+       });
+      </script>
+
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

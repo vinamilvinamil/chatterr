@@ -133,7 +133,7 @@
                                  has-error
                                  @endif">
             {{ Form::label('Reply', 'Reply', array('class' => 'control-label label-mcc')); }}
-            {{ Form::textarea('Content', null, array('class' => 'form-control form-mcc', 'row' => '6')); }}          
+            {{ Form::textarea('Content', null, array('class' => 'form-control form-mcc mce', 'row' => '6')); }}          
             <span class="text-danger control-label pull-left">{{ $errors->first('Content') }}</span>
           </div>    
 
