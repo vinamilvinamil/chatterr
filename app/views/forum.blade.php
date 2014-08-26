@@ -2,7 +2,6 @@
 @section('content')
 
 @include('layout.userbar')
-
 @include('modals.login')
 
 

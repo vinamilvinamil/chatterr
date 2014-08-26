@@ -1,22 +1,7 @@
 @extends('master')
 @section('content')
 
-<div class="container-fluid forum-userbar">
-		<div class="btn-group">
-			<button type="button" id="userOptions" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			    Action <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" aria-labelledby="userOptions" role="menu">
-				<li><a href="#">Action</a></li>
-				<li><a href="#">Another action</a></li>
-				<li><a href="#">Something else here</a></li>
-				<li class="divider"></li>
-				<li><a href="#">Separated link</a></li>
-			</ul>
-		</div>
-		<button type="button" class="btn btn-primary">{{ Auth::user() -> username }}</button>	
-</div>
-
+@include('layout.userbar')
 
 <div class="container">
 	<div class="createAccount">
