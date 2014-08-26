@@ -4,7 +4,7 @@ body {
   font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
-  padding-top: 70px;
+  padding-top: 51px;
 }
 
 .mc-nav {
@@ -14,20 +14,27 @@ body {
   background-color: #fff;
   border-color: #e7e7e7;
   box-shadow: 0 1px 1px rgba(0,0,0,.26);
-  transition: all 0.2s ease-out 0s;
+}
+
+.login-box {
+  width:300px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 20px 60px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login-error {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30px;
+  width: 320px;
 }
 
 .logo {
   position: relative;
   top: -0.5rem;
-}
-
-.label-mcc {
-  font-size: 15px;
-  line-height: 24px;
-  color: #212121;
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
 }
 
 .btn {
@@ -187,32 +194,6 @@ fieldset[disabled] .btn-primary.active {
   white-space: nowrap;
 }
 
-.hero {
-  background: url('../images/bg.jpg') no-repeat center center;
-  height:470px;
-  margin-top:-20px;
-
-}
-
-.intro {
-  text-align: center;
-  font-size:84px;
-  font-weight:bold;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-  padding-top:50px;
-}
-
-.logo {
-
-}
-
-.logo-legend {
-  font-size:44px;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 200;
-}
-
 .createAccount {
   max-width: 800px;
 }
@@ -223,22 +204,10 @@ fieldset[disabled] .btn-primary.active {
   border-radius: 2px;
 }
 
-.help-form {
-  font-size: 13px;
-}
-
-.home-bg {
-  background-color: #333;
-  margin-top: 0px;
-  color: #fff;
-}
-
-.home-box {
+.footer {
+  vertical-align: bottom;
+  height:200px;
   background-color: #fff;
-  color: #333;
-  box-shadow: 3px 0px 9px 0px rgba(0, 0, 0, 0.32);
-  margin:20px;
-  padding:40px;
 }
 
 .forum-userbar {
@@ -260,12 +229,32 @@ fieldset[disabled] .btn-primary.active {
   color:#444;
 }
 
+.help-form {
+  font-size: 13px;
+}
+
+.home-image {
+  padding: 100px 0;
+  background-position: center;
+  min-height: 500px; 
+}
+
+.home-intro {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+}
+
 .post-username {
   text-align: center;
 }
 
 .post-row {
-  border-bottom: 1px solid #ededed;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e9e9e9;
   margin-bottom: 10px;
 }
 
@@ -273,6 +262,14 @@ fieldset[disabled] .btn-primary.active {
   margin-bottom:70px;
 }
 
+.post-content {
+  padding-top: 20px;
+}
+
+.text-jumbo {
+  font-size: 60px;
+  font-weight: 700;
+}
 
 @media (min-width: 768px){
 .navbar-nav{

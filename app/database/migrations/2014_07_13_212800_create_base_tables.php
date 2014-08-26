@@ -42,7 +42,7 @@ class CreateBaseTables extends Migration {
         Schema::create('topics', function($table) {
             $table->increments('id');
             $table->string('title', 64);
-            $table->text('content', 2500);
+            $table->text('content', 16000);
             $table->integer('likes')->default(0)->unsigned();
             $table->integer('views')->default(0)->unsigned();
             $table->integer('user_id')->unsigned();

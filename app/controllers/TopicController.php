@@ -11,7 +11,7 @@ class TopicController extends BaseController {
 			$data = Input::all();
 		
 			$rules = array(
-				'Content' => array('required', 'max:500'),
+				'Content' => array('required', 'max:1000'),
 		    );	
 
 			$validator = Validator::make($data, $rules);

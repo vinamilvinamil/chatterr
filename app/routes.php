@@ -23,6 +23,14 @@ Route::get('signup', function()
 	return View::make('signup');
 });
 
+Route::get('login', function()
+{
+	if (Auth::check())
+		return Redirect::to('forum');
+	else 
+		return View::make('login');
+});
+
 Route::get('topic/{id}', function($id)
 {
     $topic = Topic::find($id);
@@ -33,7 +41,6 @@ Route::get('topic/{id}', function($id)
 
 Route::get('forum', 'ForumController@getForum');
 Route::get('newTopic', 'ForumController@getNewTopic');
-
 Route::get('logout', 'UserController@logoutUser');
 
 // Post Routes

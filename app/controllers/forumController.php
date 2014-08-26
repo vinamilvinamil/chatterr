@@ -16,7 +16,7 @@ public function getNewTopic()
 			$categories = DB::table('categories') -> lists('name', 'id');
 		    return View::make('newTopic') -> with('categories', $categories);
 		}
-		else return 'You must be logged in to create a post.';
+		else Redirect::to('login') -> withErrors('You must be logged in to create a topic');
 	}	
 
 
@@ -54,7 +54,7 @@ public function createTopic()
 				return Redirect::to('forum');
 			}
 		}
-		else return 'You must be logged in. Log in and try again.';
+		else Redirect::to('login') -> withErrors('You must be logged in to create a topic');
 	}		
 
 }	

@@ -47,7 +47,7 @@ class UserController extends BaseController {
 		$validator = Validator::make($data, $rules);
 
 		if ($validator->fails()) {
-		    return Redirect::to('/') -> withErrors($validator) -> withInput(Input::except('password'));
+		    return Redirect::back() -> withErrors($validator) -> withInput(Input::except('password'));
 		}
 		else {
 			$username = Input::get('Username');
@@ -55,9 +55,9 @@ class UserController extends BaseController {
 
 			if (Auth::attempt(array('username' => $username, 'password' => $password)))
 			{
-			    return Redirect::intended('forum');
+			    return Redirect::to('forum');
 			}
-			else return 'Something went wrong';
+			return Redirect::back() -> withErrors('Your username or password is incorrect.') -> withInput(Input::except('password'));
 		}    
 	}
 

@@ -24,7 +24,10 @@
           extended_valid_elements : "iframe[src|title|width|height|allowfullscreen|frameborder]",
           menubar: false,
           statusbar:  false,
-          toolbar: "undo redo | bold italic | link | emoticons | image"
+          toolbar: "undo redo | bold italic | link | emoticons | image",
+          forced_root_block : "",
+          force_br_newlines : true,
+          force_p_newlines : false
        });
       </script>
 
@@ -70,7 +73,7 @@
    @yield('content')
 
 
-    <!-- Bootstrap core JavaScript
+    <!-- Core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
