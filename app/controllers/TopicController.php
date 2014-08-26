@@ -11,7 +11,7 @@ class TopicController extends BaseController {
 			$data = Input::all();
 		
 			$rules = array(
-				'Content' => array('required', 'max:1000'),
+				'Content' => array('required', 'max:16000'),
 		    );	
 
 			$validator = Validator::make($data, $rules);
@@ -32,19 +32,7 @@ class TopicController extends BaseController {
 				return Redirect::back();
 			}
 		}
-		else return 'You must be logged in. Log in and try again.';
+		else Redirect::to('login');
 	}
-
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
 
 }

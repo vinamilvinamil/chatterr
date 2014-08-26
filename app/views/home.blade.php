@@ -10,13 +10,13 @@
   </div>
 </header>
 
-  <!-- Login modal -->
-  @include('modals.login')
+<!-- Login modal -->
+@include('modals.login')
 
-   <!-- Begin footer -->
-      <div class="container-fluid footer">
-        <div class="row">
-        </div>  
-      </div>
+<!-- Begin footer -->
+<div class="container-fluid footer">
+  <div class="row">
+  </div>  
+</div>
 
 @stop    
