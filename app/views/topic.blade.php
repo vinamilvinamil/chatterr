@@ -59,9 +59,9 @@
       <p class="pull-right">
         {{ date("M Y",strtotime($post->created_at)) }}
       </p>
-      <p>
+      <div>
       {{ $post -> content }}
-      </p>
+      </div>
     </div>
   </div>
   @endforeach

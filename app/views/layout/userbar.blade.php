@@ -10,6 +10,17 @@
 				<li><a href="#">Something else here</a></li>
 			</ul>
 		</div>
+		<div class="pull-left">
+			@if (Session::has('message'))
+				<div class="alert alert-success forum-alert alert-dismissible" role="alert">
+			    	<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+			      	<span class="sr-only">Close</span>
+			    	</button>
+			    	{{ Session::get('message') }}&nbsp;&nbsp;
+		 		</div>
+			@endif
+		</div>
+
 		<div class="btn-group">
 			@if (Auth::check())	
 			<button type="button" id="userOptions" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">

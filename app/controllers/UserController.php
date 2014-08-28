@@ -31,7 +31,7 @@ class UserController extends BaseController {
 			$user -> username = $newUsername;
 			$user -> password = Hash::make($newPassword);
 			$user -> save();
-			return 'Data was saved!';
+			return Redirect::to('forum') -> withMessage('Account created');
 		}
 	}
 
@@ -55,7 +55,7 @@ class UserController extends BaseController {
 
 			if (Auth::attempt(array('username' => $username, 'password' => $password)))
 			{
-			    return Redirect::to('forum');
+			    return Redirect::back() -> withMessage('Login successful');
 			}
 			return Redirect::back() -> withErrors('Your username or password is incorrect.') -> withInput(Input::except('password'));
 		}    
@@ -64,7 +64,7 @@ class UserController extends BaseController {
 	public function logoutUser()
 	{
 		Auth::logout();
-		return Redirect::to('forum');
+		return Redirect::back() -> withMessage('Logout successful');
 	}
 
 public function getForum() 
@@ -73,7 +73,7 @@ public function getForum()
 			$username = Auth::user()->username;
 		    return View::make('forum') ->withUsername($username);
 		}
-		else return Redirect::to('signup');
+		else return View::make('forum');
 	}
  
  }	
