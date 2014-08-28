@@ -32,7 +32,8 @@ class TopicController extends BaseController {
 				return Redirect::back();
 			}
 		}
-		else Redirect::to('login');
+		else
+			return Redirect::to('login');
 	}
 
 }
