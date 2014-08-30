@@ -30,7 +30,7 @@
             <h6>Posts</h6>
             <span class="text-primary"> {{ $topic -> posts -> count() }}</span>
           </li>
-           <li>
+          <li>
             <h6>Views</h6>
             <span class="text-primary"> {{ $topic -> views }}</span>
           </li>
@@ -60,13 +60,14 @@
         {{ date("M Y",strtotime($post->created_at)) }}
       </p>
       <div>
-      {{ $post -> content }}
+        {{ $post -> content }}
       </div>
     </div>
   </div>
   @endforeach
 
   <!-- Reply Form -->
+  @if (Auth::check())
 
   @if (Session::has('errors'))
   <div class="row">
@@ -93,11 +94,11 @@
       </div>
       {{ Form::close() }}
     </div>
-    <!-- End Reply Form --> 
-
   </div>
+  <!-- End Reply Form --> 
+  @else
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login to reply</button> 
+  @endif
+
 </div><!-- End Container --> 
-
-
-
 @stop

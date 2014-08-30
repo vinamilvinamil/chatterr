@@ -27,7 +27,7 @@
 				{{ Auth::user() -> username }}
 				@else
 				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-					Sign in
+					Log in
 					@endif
 				</button>
 				<ul class="dropdown-menu" aria-labelledby="userOptions" role="menu">
