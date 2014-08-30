@@ -64,7 +64,7 @@ class UserController extends BaseController {
 	public function logoutUser()
 	{
 		Auth::logout();
-		return Redirect::back() -> withMessage('Logout successful');
+		return Redirect::to('forum') -> withMessage('Logout successful');
 	}
 
 public function getForum() 

@@ -35,10 +35,10 @@
 
     </div>
     <div class="modal-footer">
-      <div class="col-sm-3" style="padding-left:0px; margin-right:-26px;">
-        {{ Form::submit('Sign in', array('class' => 'btn btn-primary pull-left')); }}
+      <div class="btn-group pull-left" style="margin-right:8px;">
+        {{ Form::button('<i class="fa fa-sign-in glyph"></i>Log in', array('type' => 'submit', 'class' => 'btn btn-primary pull-left')); }}
       </div>
-      <div class="col-sm-9">  
+      <div class="btn-group pull-left">  
         <a href="{{ url('signup') }}", type="button" class="btn btn-default pull-left">Create new account</a>
         {{ Form::close() }}
       </div>  

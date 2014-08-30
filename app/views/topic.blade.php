@@ -89,7 +89,7 @@
         {{ Form::textarea('Content', null, array('class' => 'form-control form-mcc mce', 'row' => '6')); }}          
       </div>    
       <div>
-        {{ Form::submit('Submit reply', array('class' => 'btn btn-primary')); }}
+        {{ Form::button('<i class="fa fa-comment glyph"></i>Submit reply', array('type' => 'submit', 'class' => 'btn btn-primary')); }}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url('forum') }}">Cancel</a>
       </div>
       {{ Form::close() }}
@@ -97,7 +97,8 @@
   </div>
   <!-- End Reply Form --> 
   @else
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Login to reply</button> 
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
+  <span class="fa fa-user glyph"></span>Login to reply</button> 
   @endif
 
 </div><!-- End Container --> 
