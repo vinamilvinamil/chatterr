@@ -31,7 +31,12 @@ class UserController extends BaseController {
 			$user -> username = $newUsername;
 			$user -> password = Hash::make($newPassword);
 			$user -> save();
-			return Redirect::to('forum') -> withMessage('Account created');
+
+			if (Auth::attempt(array('username' => $newUsername, 'password' => $newPassword)))
+			{
+				return Redirect::to('forum') -> withMessage('Account created successfully');
+			}
+			return Redirect::to('login') -> withMessage('Account created. Please login.');
 		}
 	}
 

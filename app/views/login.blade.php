@@ -3,13 +3,22 @@
 <div class="container">
 
   @if (Session::has('errors'))
-  <div class="alert alert-danger login-error alert-dismissible" role="alert">
+  <div class="alert alert-danger login-message alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
       <span class="sr-only">Close</span>
     </button>
-    <strong>{{ $errors->first() }}</strong>
+    <strong class="glyph">{{ $errors->first() }}</strong>
   </div>
-  @endif 
+  @endif
+
+  @if (Session::has('message'))
+  <div class="alert alert-success login-message alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <strong class="glyph">{{ Session::get('message') }}</strong>
+  </div>
+  @endif  
 
   <div class="text-center">
     <br><br>
