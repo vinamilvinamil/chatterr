@@ -49,7 +49,7 @@ body {
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
- -webkit-touch-callout: none;
+  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -84,7 +84,7 @@ body {
   background-image: none;
   outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
-          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
 }
 .btn.disabled,
 .btn[disabled],
@@ -93,7 +93,7 @@ fieldset[disabled] .btn {
   cursor: not-allowed;
   filter: alpha(opacity=65);
   -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   opacity: .65;
 }
 .btn-default {
@@ -225,11 +225,6 @@ fieldset[disabled] .btn-primary.active {
   border-bottom: 1px solid #ddd
 }
 
-.forum-headings {
-  height:41px;
-  color:#444;
-}
-
 .glyph {
   padding-right: 8px;
 }
@@ -245,11 +240,11 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .home-intro {
-    text-align: center;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: white;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
 }
 
 .post-username {
@@ -284,11 +279,19 @@ fieldset[disabled] .btn-primary.active {
   font-weight: 700;
 }
 
+.forum-topic-title {
+  font-size: 16px;
+}
+
+.forum-topic-title:hover { 
+  text-decoration: none;
+}
+
 @media (min-width: 768px){
-.navbar-nav{
+  .navbar-nav{
     margin: 0 auto;
     display: table;
     table-layout: fixed;
     float:none;
-}
+  }
 }  
