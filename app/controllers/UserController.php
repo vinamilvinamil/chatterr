@@ -60,7 +60,7 @@ class UserController extends BaseController {
 
 			if (Auth::attempt(array('username' => $username, 'password' => $password)))
 			{
-			    return Redirect::back() -> withMessage('Login successful');
+			    return Redirect::back() -> with('message', 'Login successful');
 			}
 			return Redirect::back() -> withErrors('Your username or password is incorrect.') -> withInput(Input::except('password'));
 		}    
