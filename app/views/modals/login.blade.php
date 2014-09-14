@@ -14,7 +14,7 @@
          @endif">
          {{ Form::label('User', 'Username', array('class' => 'col-sm-2 control-label label-mcc')); }}
          <div class="col-xs-5">
-          {{ Form::text('Username', '',array('class' => 'form-control form-mcc')); }}
+          {{ Form::text('Username', '',array('class' => 'form-control form-mcc', 'required' => '')); }}
         </div>
         <div class="col-sm-5">
           <span class="text-danger control-label pull-left">{{ $errors->first('Username') }}</span>
@@ -26,7 +26,7 @@
         @endif">
         {{ Form::label('Password', 'Password', array('class' => 'col-sm-2 control-label label-mcc')); }}
         <div class="col-xs-5">
-          {{ Form::password('Password', array('class' => 'form-control form-mcc')); }}
+          {{ Form::password('Password', array('class' => 'form-control form-mcc', 'required' => '')); }}
         </div>
         <div class="col-sm-5">
           <span class="text-danger control-label pull-left">{{ $errors->first('Password') }}</span>

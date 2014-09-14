@@ -31,13 +31,15 @@ Route::get('login', function()
 		return View::make('login');
 });
 
-Route::get('topic/{id}', function($id)
+Route::get('topic/{id}', array('as' => 'topic', function($id)
 {
     $topic = Topic::find($id);
     $topic->increment('views');
     $posts = $topic -> posts;
     return View::make('topic') -> with('topic', $topic) ->with('posts', $posts);
-});
+}));
+
+Route::get('edit-post/{id}', 'TopicController@getPost');
 
 Route::get('forum', 'ForumController@getForum');
 Route::get('newTopic', 'ForumController@getNewTopic');
@@ -48,6 +50,8 @@ Route::post('signup', 'UserController@createUser');
 Route::post('login', 'UserController@loginUser');
 Route::post('newTopic', 'ForumController@createTopic');
 Route::post('newReply', 'TopicController@createReply');
+Route::post('editPost/{id}', 'TopicController@editPost');
+Route::post('post-control', 'TopicController@postControl');
 
 
 

@@ -11,7 +11,7 @@
   <!-- Topic Main Post -->
   <div class="media post-row post-top">
     <a class="pull-left" href="#">
-      <img class="media-object" src="http://placehold.it/80x80/fd7400/fff" alt="user-image">
+      <img class="media-object" src="{{ $topic -> user -> avatars -> gravatar }}" alt="{{ $topic -> user -> username }}">
     </a>
     <div class="media-body">
       <h4 class="media-heading">{{ $topic -> user -> username }} </h4>
@@ -41,8 +41,9 @@
         </ul>
       </div>
     </div>
-
-    <div class="pull-right text-primary">{{ $topic -> likes }} Likes</div>
+    @if ($topic -> likes > 0)
+    <div class="pull-right text-primary">{{ $topic -> likes }} people likes this.</div>
+    @endif  
 
 
 
@@ -50,20 +51,46 @@
 
   <!-- Reply Posts -->  
   @foreach($posts as $post)
-  <div class="media post-row">
+  <article class="media post-row">
     <a class="pull-left" href="#">
-      <img class="media-object" src="http://placehold.it/80x80/004358/fff" alt="user-image">
+      <img class="media-object" src="{{ $post -> user -> avatars -> gravatar }}" alt="{{ $post -> user -> username }}">
     </a>
     <div class="media-body">
-      <h4 class="media-heading">{{ $post -> user -> username }} </h4>
-      <p class="pull-right">
-        {{ date("M Y",strtotime($post->created_at)) }}
-      </p>
+      <div class="media-heading">
+        <span class="post-username">{{ $post -> user -> username }}</span>
+        <span class="pull-right post-time">
+          {{ date("M Y",strtotime($post->created_at)) }}
+        </span>
+      </div>
       <div>
         {{ $post -> content }}
       </div>
+      <!-- Post controls -->
+      <div class="btn-toolbar post-controls pull-right" role="toolbar">
+        @if (Auth::check())
+        <a href="#" class="like" title="Like this post" data-post-id="{{ $post -> id }}">
+          <span class="btn-group fa fa-heart post-control-btn"></span>
+        </a>
+        <a href="#" title="Bookmark this post">
+          <span class="btn-group fa fa-bookmark post-control-btn"></span>
+        </a>
+        @if (Auth::user() -> id == $post -> user -> id )
+        <a href="{{ action('TopicController@getPost', $post->id) }}" title="Edit this post">
+          <i class="btn-group fa fa-edit post-control-btn"></i>
+        </a>
+        @endif
+        @endif
+      </div> 
+
     </div>
-  </div>
+    <div class="media-body">
+      @if ($post -> likes > 0)
+      <div class="text-primary pull-right">
+        <div data-like-id="{{ $post -> id }}">{{ $post -> likes }} people likes this.</div>
+      </div>
+      @endif  
+    </div>
+  </article>
   @endforeach
 
   <!-- Reply Form -->
@@ -90,16 +117,25 @@
       </div>    
       <div>
         {{ Form::button('<i class="fa fa-comment glyph"></i>Submit reply', array('type' => 'submit', 'class' => 'btn btn-primary')); }}
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url('forum') }}">Cancel</a>
+        <a href="{{ url('forum') }}">Cancel</a>
       </div>
       {{ Form::close() }}
     </div>
   </div>
   <!-- End Reply Form --> 
   @else
+  <div style="height:10px;"></div>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">
-  <span class="fa fa-user glyph"></span>Login to reply</button> 
-  @endif
+    <span class="fa fa-user glyph"></span>Login to reply</button> 
+    <div style="height:80px;"></div>
+    @endif
 
-</div><!-- End Container --> 
-@stop
+  </div><!-- End Container -->
+  @stop
+
+
+
+
+
+
+

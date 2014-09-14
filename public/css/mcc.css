@@ -248,8 +248,28 @@ fieldset[disabled] .btn-primary.active {
   color: white;
 }
 
+.post-controls {
+}
+
+.post-controls :hover {
+  color: #55baf5;
+}
+
+.post-control-btn {
+  font-size: 18px;
+  padding: 10px 5px;
+  color:#919191;
+  transition: all linear 0.15s;
+}
+
+.post-time {
+  font-size: 13px;
+  color: #919191;
+}
+
 .post-username {
-  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
 }
 
 .post-row {

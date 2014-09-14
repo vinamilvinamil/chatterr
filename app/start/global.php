@@ -79,3 +79,19 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Custom Validation
+|--------------------------------------------------------------------------
+|
+| The following language lines contain the default error messages used by
+| the validator class. Some of these rules have multiple versions such
+| as the size rules. Feel free to tweak each of these messages here.
+|
+*/
+
+Validator::extend('alpha_spaces', function($attribute, $value)
+{
+	return preg_match('/^[\pL\s]+$/u', $value);
+});

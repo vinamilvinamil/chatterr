@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="A modern discussion platform">
+  <meta name="author" content="Michael Hanslo">
   <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
   <title>Chatter</title>
@@ -21,7 +21,7 @@
       plugins: "link emoticons image",
       selector: "textarea.mce",
       width: '90%',
-      extended_valid_elements : "iframe[src|title|width|height|allowfullscreen|frameborder]",
+      extended_valid_elements : 'iframe[src|title|width|height|allowfullscreen|frameborder]',
       menubar: false,
       statusbar:  false,
       toolbar: "undo redo | bold italic | link | emoticons | image",
@@ -58,9 +58,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
               <li><a href="{{ URL::to('/') }}">Home</a></li>
-              <li><a href="{{ url('about') }}">About</a></li>
-              <li><a href="{{ url('forum') }}">Try it</a></li>
-              <li><a href="{{ url('contact') }}">Contact</a></li>
+              <li><a href="{{ url('forum') }}">Forum</a></li>
             </ul>
           </li>
         </ul>
@@ -76,7 +74,9 @@
     <!-- Core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-  </body>
-  </html>
+    <script src="{{ asset('js/scripts.js') }}"></script>
+
+    </body>
+    </html>

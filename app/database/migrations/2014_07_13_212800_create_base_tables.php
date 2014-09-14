@@ -25,12 +25,13 @@ class CreateBaseTables extends Migration {
             $table->timestamps();
         });
 
-        Schema::create('images', function($table) {
+        Schema::create('avatars', function($table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('filename');
-            $table->string('image_type');
+            $table->string('gravatar')->nullable();
+            $table->string('custom')->nullable();
+            $table->timestamps();
         });
 
         Schema::create('categories', function($table) {
@@ -62,6 +63,15 @@ class CreateBaseTables extends Migration {
             $table->foreign('topic_id')->references('id')->on('topics');
             $table->timestamps();
         });
+
+        Schema::create('likes', function($table) {
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('post_id')->unsigned();
+            $table->foreign('post_id')->references('id')->on('posts');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -72,10 +82,11 @@ class CreateBaseTables extends Migration {
     public function down()
     {
         Schema::drop('users');
-        Schema::drop('images');
+        Schema::drop('avatars');
         Schema::drop('categories');
         Schema::drop('topics');
         Schema::drop('posts');
+        Schema::drop('likes');
     }
 
 }

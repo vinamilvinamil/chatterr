@@ -9,6 +9,9 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UserTableSeeder');
 		$this->command->info('User table seeded!');
 
+		$this->call('AvatarTableSeeder');
+		$this->command->info('Avatar table seeded!');
+
 		$this->call('CategoryTableSeeder');
 		$this->command->info('Category table seeded!');
 
@@ -35,6 +38,17 @@ class UserTableSeeder extends Seeder {
 		'about' => 'Founder and creator',
 		'location' => 'Cape Town, South Africa',
 		'website' => 'www.mikehanslo.com'));
+	}
+}
+
+class AvatarTableSeeder extends Seeder { 
+
+	public function run()
+	{
+		DB::table('avatars')->delete();
+		Avatar::create(array(
+		'user_id' => 1,
+		'gravatar' => 'http://gravatar.com/avatar/f246c7fc2275b68c2e02f734e960b5a3'));
 	}
 }
 
@@ -88,4 +102,3 @@ class PostTableSeeder extends Seeder {
 			));
 	}
 }
-
