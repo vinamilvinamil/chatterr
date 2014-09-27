@@ -35,7 +35,7 @@
 		<tbody>
 			@foreach($topics as $topic)
 			<tr>
-				<td> <a href="{{ url('topic', $topic -> id) }}" class="forum-topic-title">{{ $topic -> title }}</a> </td>
+				<td> <a href="{{ action('TopicController@show', array($topic -> id)) }}" class="forum-topic-title">{{ $topic -> title }}</a> </td>
 				<td> {{ $topic -> category -> name }} </td>
 				<td> {{ $topic -> user -> username }} </td>
 				<td> {{ $topic -> posts -> count() }} </td>

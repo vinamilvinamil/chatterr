@@ -57,16 +57,16 @@ class CreateBaseTables extends Migration {
             $table->increments('id');
             $table->string('content');
             $table->integer('likes')->default(0)->unsigned();
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('topic_id')->unsigned();
+            $table->integer('topic_id')->unsigned()->nullable();
             $table->foreign('topic_id')->references('id')->on('topics');
             $table->timestamps();
         });
 
         Schema::create('likes', function($table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned()->nullable();;
             $table->foreign('user_id')->references('id')->on('users');
             $table->integer('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('posts');

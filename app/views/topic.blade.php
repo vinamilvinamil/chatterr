@@ -75,7 +75,7 @@
           <span class="btn-group fa fa-bookmark post-control-btn"></span>
         </a>
         @if (Auth::user() -> id == $post -> user -> id )
-        <a href="{{ action('TopicController@getPost', $post->id) }}" title="Edit this post">
+        <a href="{{ action('PostController@edit', $post->id) }}" title="Edit this post">
           <i class="btn-group fa fa-edit post-control-btn"></i>
         </a>
         @endif
@@ -103,7 +103,7 @@
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span>
           <span class="sr-only">Close</span>
         </button>
-        <strong>{{ $errors->first() }}</strong>
+        <strong>{{ $errors->first() }} </strong>
       </div>
     </div>
   </div>
@@ -111,9 +111,9 @@
 
   <div class="row post-reply">
     <div class="col-md-7">
-      {{ Form::open(array('action' => array('TopicController@createReply', 'Topic_id' => $topic->id), 'role' => 'form')) }}
+      {{ Form::open(array('action' => array('PostController@store', 'topic_id' => $topic->id), 'role' => 'form')) }}
       <div class="form-group">
-        {{ Form::textarea('Content', null, array('class' => 'form-control form-mcc mce', 'row' => '6')); }}          
+        {{ Form::textarea('content', null, array('class' => 'form-control form-mcc mce', 'row' => '6')); }}          
       </div>    
       <div>
         {{ Form::button('<i class="fa fa-comment glyph"></i>Submit reply', array('type' => 'submit', 'class' => 'btn btn-primary')); }}
