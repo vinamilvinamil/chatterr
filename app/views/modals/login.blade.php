@@ -7,7 +7,7 @@
         <h4 class="modal-title" id="myModalLabel">Sign in</h4>
       </div>
       <div class="modal-body">
-        {{ Form::open(array('url' => 'login', 'class' => 'form-horizontal', 'role' => 'form')) }}
+        {{ Form::open(array('action' => 'AuthController@postLoginUser', 'class' => 'form-horizontal', 'role' => 'form')) }}
 
         <div class="form-group @if($errors->has('Username'))
          has-error
@@ -39,7 +39,7 @@
         {{ Form::button('<i class="fa fa-sign-in glyph"></i>Log in', array('type' => 'submit', 'class' => 'btn btn-primary pull-left')); }}
       </div>
       <div class="btn-group pull-left">  
-        <a href="{{ url('signup') }}", type="button" class="btn btn-default pull-left">Create new account</a>
+        <a href="{{ action('UserController@create') }}", type="button" class="btn btn-default pull-left">Create new account</a>
         {{ Form::close() }}
       </div>  
 

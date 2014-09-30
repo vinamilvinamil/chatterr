@@ -26,7 +26,7 @@
   </div>
 
   <div class="login-box"> 
-    {{ Form::open(array('url' => 'login', 'role' => 'form')) }}
+    {{ Form::open(array('action' => 'AuthController@postLoginUser', 'role' => 'form')) }}
     <div class="form-group">
       {{ Form::label('User', 'Username', array('class' => 'control-label label-mcc')); }}
       {{ Form::text('Username', null, array('class' => 'form-control form-mcc', 'required' => '')); }}
@@ -37,7 +37,7 @@
     </div>
     <br>
     {{ Form::submit('Sign in', array('class' => 'btn btn-primary pull-left')); }}
-    <a href="{{ url('signup') }}", type="button" class="btn btn-default pull-right">Create new account</a>    
+    <a href="{{ action('UserController@create') }}", type="button" class="btn btn-default pull-right">Create new account</a>    
     {{ Form::close() }}
   </div> <!-- /login box -->
   

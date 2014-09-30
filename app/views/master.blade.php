@@ -58,7 +58,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
               <li><a href="{{ URL::to('/') }}">Home</a></li>
-              <li><a href="{{ url('forum') }}">Forum</a></li>
+              <li><a href="{{ action('TopicController@index') }}">Forum</a></li>
             </ul>
           </li>
         </ul>
@@ -78,5 +78,5 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}"></script>
 
-    </body>
-    </html>
+  </body>
+  </html>

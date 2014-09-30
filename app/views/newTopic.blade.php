@@ -8,7 +8,7 @@
 		<h2>New Topic</h2>
 		<br>
 		<div>
-			{{ Form::open(array('action' => 'ForumController@createTopic', 'role' => 'form')) }}
+			{{ Form::open(array('action' => 'TopicController@store', 'role' => 'form')) }}
 
 			<div class="form-group @if($errors->has('Title'))
 				has-error
@@ -47,7 +47,7 @@
 		</div>
 		<div>
 			{{ Form::submit('Submit topic', array('class' => 'btn btn-primary')); }}
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ url('forum') }}">Cancel</a>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="{{ action('TopicController@index') }}">Cancel</a>
 			
 		</div>
 		{{ Form::close() }}

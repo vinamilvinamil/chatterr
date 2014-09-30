@@ -18,31 +18,12 @@ Route::get('/', function()
 	return View::make('home');
 });
 
-Route::get('signup', function()
-{
-	return View::make('signup');
-});
-
-Route::get('login', function()
-{
-	if (Auth::check())
-		return Redirect::to('forum');
-	else 
-		return View::make('login');
-});
-
+Route::controller('auth', 'AuthController');
+Route::resource('user', 'UserController');
 Route::resource('topic', 'TopicController');
 Route::resource('post', 'PostController');
 
-Route::get('forum', 'ForumController@getForum');
-Route::get('newTopic', 'ForumController@getNewTopic');
-Route::get('logout', 'UserController@logoutUser');
+Route::get('login', 'AuthController@showLogin');
 
 // Post Routes
-Route::post('signup', 'UserController@createUser');
-Route::post('login', 'UserController@loginUser');
-Route::post('newTopic', 'ForumController@createTopic');
 Route::post('post-control', 'TopicController@postControl');
-
-
-

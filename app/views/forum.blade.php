@@ -17,7 +17,7 @@
 		</ul>
 	</div>		
 	<button type="button" class="btn btn-primary">Hot</button>
-	<a href="{{ url('newTopic') }}"><button type="button" class="btn btn-default"><span class="fa fa-pencil glyph"></span>New Topic</button></a>		
+	<a href="{{ action('TopicController@create') }}"><button type="button" class="btn btn-default"><span class="fa fa-pencil glyph"></span>New Topic</button></a>		
 </div>
 
 <div class="container">

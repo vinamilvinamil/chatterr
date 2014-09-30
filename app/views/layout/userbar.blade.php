@@ -26,7 +26,7 @@
 					@endif
 				</button>
 				<ul class="dropdown-menu" aria-labelledby="userOptions" role="menu">
-					<li><a href="{{ url('logout') }}">Log out</a></li>
+					<li><a href="{{ action('AuthController@getLogout') }}">Log out</a></li>
 				</ul>	
 			</div>
 

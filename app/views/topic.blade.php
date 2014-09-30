@@ -43,10 +43,7 @@
     </div>
     @if ($topic -> likes > 0)
     <div class="pull-right text-primary">{{ $topic -> likes }} people likes this.</div>
-    @endif  
-
-
-
+    @endif 
   </div>
 
   <!-- Reply Posts -->  
@@ -58,9 +55,7 @@
     <div class="media-body">
       <div class="media-heading">
         <span class="post-username">{{ $post -> user -> username }}</span>
-        <span class="pull-right post-time">
-          {{ date("M Y",strtotime($post->created_at)) }}
-        </span>
+        <span class="pull-right post-time">{{ date("M Y",strtotime($post->created_at)) }}</span>
       </div>
       <div>
         {{ $post -> content }}
@@ -117,7 +112,7 @@
       </div>    
       <div>
         {{ Form::button('<i class="fa fa-comment glyph"></i>Submit reply', array('type' => 'submit', 'class' => 'btn btn-primary')); }}
-        <a href="{{ url('forum') }}">Cancel</a>
+        <a href="{{ action('TopicController@index') }}">Cancel</a>
       </div>
       {{ Form::close() }}
     </div>
@@ -132,10 +127,3 @@
 
   </div><!-- End Container -->
   @stop
-
-
-
-
-
-
-

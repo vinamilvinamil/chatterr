@@ -6,7 +6,7 @@
   <div class="home-intro">
     <h1 class="text-jumbo">CHATTER</h1>
     <h3>A new way to engage in discussions.</h3>
-    <a href="{{ url('forum') }}" class="btn btn-default">Try It Out</a>
+    <a href="{{ action('TopicController@index') }}" class="btn btn-default">Try It Out</a>
   </div>
 </header>
 

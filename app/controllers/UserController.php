@@ -1,9 +1,35 @@
 <?php
 
-class UserController extends BaseController {
+class UserController extends \BaseController {
+
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function index()
+	{
+		//
+	}
 
 
-	public function createUser()
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		return View::make('signup');
+	}
+
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
 	{
 		$data = Input::all();
 		
@@ -44,45 +70,53 @@ class UserController extends BaseController {
 		}
 	}
 
-	public function loginUser()
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
 	{
-		$data = Input::all();
-
-		$rules = array(
-	        'Username' => array('required'),
-	        'Password' => array('required')
-	    );	
-
-		$validator = Validator::make($data, $rules);
-
-		if ($validator->fails()) {
-		    return Redirect::back() -> withErrors($validator) -> withInput(Input::except('password'));
-		}
-		else {
-			$username = Input::get('Username');
-			$password = Input::get('Password');
-
-			if (Auth::attempt(array('username' => $username, 'password' => $password)))
-			{
-			    return Redirect::back() -> with('message', 'Login successful');
-			}
-			return Redirect::to('login') -> withErrors('Your username or password is incorrect.') -> withInput(Input::except('password'));
-		}    
+		//
 	}
 
-	public function logoutUser()
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
 	{
-		Auth::logout();
-		return Redirect::to('forum') -> withMessage('Logout successful');
+		//
 	}
 
-public function getForum() 
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
 	{
-		if (Auth::check()) {
-			$username = Auth::user()->username;
-		    return View::make('forum') ->withUsername($username);
-		}
-		else return View::make('forum');
+		//
 	}
- 
- }	
+
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		//
+	}
+
+
+}
