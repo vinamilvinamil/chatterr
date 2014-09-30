@@ -26,7 +26,7 @@
   </div>
 
   <div class="login-box"> 
-    {{ Form::open(array('action' => 'AuthController@postLoginUser', 'role' => 'form')) }}
+    {{ Form::open(array('action' => 'AuthController@postLogin', 'role' => 'form')) }}
     <div class="form-group">
       {{ Form::label('User', 'Username', array('class' => 'control-label label-mcc')); }}
       {{ Form::text('Username', null, array('class' => 'form-control form-mcc', 'required' => '')); }}

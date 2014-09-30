@@ -6,10 +6,10 @@ class AuthController extends \BaseController {
      * Show the application login form.
      *
      */
-    public function showLogin()
+    public function getLogin()
     {
         if (Auth::check())
-            return Redirect::to('forum');
+            return Redirect::action('TopicController@index') -> withMessage('Login successful');
         else 
             return View::make('login');
     }
@@ -18,7 +18,7 @@ class AuthController extends \BaseController {
      * Login user to application
      *
      */
-    public function postLoginUser()
+    public function postLogin()
     {
         $data = Input::all();
 
@@ -38,9 +38,9 @@ class AuthController extends \BaseController {
 
             if (Auth::attempt(array('username' => $username, 'password' => $password)))
             {
-                return Redirect::back() -> with('message', 'Login successful');
+                return Redirect::back() -> withMessage('Login successful');
             }
-            return Redirect::to('login') -> withErrors('Your username or password is incorrect.') -> withInput(Input::except('password'));
+            return Redirect::action('AuthController@getLogin') -> withErrors('Your username or password is incorrect.') -> withInput(Input::except('password'));
         }    
     }
     /**
@@ -51,7 +51,7 @@ class AuthController extends \BaseController {
     public function getLogout()
     {
         Auth::logout();
-        return Redirect::to('forum') -> withMessage('Logout successful');
+        return Redirect::action('TopicController@index') -> withMessage('Logout successful');
     }
 
 

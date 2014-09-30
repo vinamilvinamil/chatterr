@@ -23,7 +23,5 @@ Route::resource('user', 'UserController');
 Route::resource('topic', 'TopicController');
 Route::resource('post', 'PostController');
 
-Route::get('login', 'AuthController@showLogin');
-
 // Post Routes
 Route::post('post-control', 'TopicController@postControl');

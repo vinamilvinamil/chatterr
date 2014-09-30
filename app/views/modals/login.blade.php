@@ -7,7 +7,7 @@
         <h4 class="modal-title" id="myModalLabel">Sign in</h4>
       </div>
       <div class="modal-body">
-        {{ Form::open(array('action' => 'AuthController@postLoginUser', 'class' => 'form-horizontal', 'role' => 'form')) }}
+        {{ Form::open(array('action' => 'AuthController@postLogin', 'class' => 'form-horizontal', 'role' => 'form')) }}
 
         <div class="form-group @if($errors->has('Username'))
          has-error
