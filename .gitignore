@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 vendor
 =======
 /bootstrap/compiled.php
@@ -8,4 +7,3 @@ composer.phar
 .env.php
 .DS_Store
 Thumbs.db
->>>>>>> f04dc45dc3ed31f4f9157de22d4d55405cc4b2e6
