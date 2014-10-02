@@ -5,7 +5,6 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"raahul/larryfour": "1.*",
 		"phpunit/phpunit": "4.0.*"
 	},
 	"autoload": {

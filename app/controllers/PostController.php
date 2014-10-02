@@ -103,25 +103,35 @@ class PostController extends \BaseController {
 	{
 		if (Auth::check()) {
 
-			$data = Input::all();
-
-			$rules = array(
-				'content' => array('required', 'max:16000'),
-				);	
-
-			$validator = Validator::make($data, $rules);
-
-			if ($validator->fails()) {
-				return Redirect::back() -> withErrors($validator);
-			}
-			else {
-				$newContent = Input::get('content');
-				$topic = Post::find($id) -> topic -> id;
-
+			if (Request::ajax()) {
+				$id = Input::get('id');
 				$post = Post::find($id);
-				$post -> content = $newContent;
-				$post -> save();
-				return Redirect::action('TopicController@show', array($topic)) -> with('message', 'Post edited successfully');
+				$post -> increment('likes');
+				return Response::json('You liked this post!');
+			}
+
+			else {
+
+				$data = Input::all();
+
+				$rules = array(
+					'content' => array('required', 'max:16000'),
+					);	
+
+				$validator = Validator::make($data, $rules);
+
+				if ($validator->fails()) {
+					return Redirect::back() -> withErrors($validator);
+				}
+				else {
+					$newContent = Input::get('content');
+					$topic = Post::find($id) -> topic -> id;
+
+					$post = Post::find($id);
+					$post -> content = $newContent;
+					$post -> save();
+					return Redirect::action('TopicController@show', array($topic)) -> with('message', 'Post edited successfully');
+				}
 			}
 		}
 		else return Redirect::to('login') -> with('message', 'Please login to edit posts');
