@@ -1,1 +1,11 @@
+<<<<<<< HEAD
 vendor
+=======
+/bootstrap/compiled.php
+/vendor
+composer.phar
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+>>>>>>> f04dc45dc3ed31f4f9157de22d4d55405cc4b2e6
